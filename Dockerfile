@@ -3,7 +3,7 @@ FROM sharelatex/sharelatex:6.1.0
 SHELL ["/bin/bash", "-cx"]
 
 # update tlmgr itself
-RUN wget "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh" \
+RUN wget --no-check-certificate "https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh" \
     && sh update-tlmgr-latest.sh \
     && tlmgr --version
 
